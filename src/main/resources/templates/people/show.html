@@ -1,0 +1,80 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Show</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<p th:text="${user.getName() + ', ' + user.getAge()}">VALUE</p>-->
+<!--<p th:text="${'Email: ' + user.getEmail()}">VALUE</p>-->
+<!--<p th:text="${user.getId()}">VALUE</p>-->
+
+<!--<a th:href="@{/people/edit(id=${user.getId()})}">Edit</a>-->
+<!--<br>-->
+<!--<form th:method="DELETE" th:action="@{/people(id=${user.getId()})}">-->
+<!--  <input type="submit" value="Delete"/>-->
+<!--</form>-->
+<!--</body>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Show</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-top: 50px;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .edit-link, .delete-button {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .delete-button {
+      background-color: #f44336;
+      border: none;
+      cursor: pointer;
+    }
+
+    .edit-link:hover, .delete-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Информация о пользователе</h1>
+
+<p th:text="${user.getName() + ', ' + user.getAge()}">VALUE</p>
+<p th:text="${'Email: ' + user.getEmail()}">VALUE</p>
+<p th:text="${user.getId()}">VALUE</p>
+
+<a th:href="@{/people/edit(id=${user.getId()})}" class="edit-link">Редактировать</a>
+<br>
+<form th:method="DELETE" th:action="@{/people(id=${user.getId()})}">
+  <input type="submit" value="Удалить" class="delete-button"/>
+</form>
+
+</body>
+</html>
+
